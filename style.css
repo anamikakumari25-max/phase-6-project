@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 650px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #4f46e5;
+    font-size: 32px;
+}
+
+.container::before {
+    content: "💬";
+    display: block;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Inputs */
+input,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s ease;
+    background: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6366f1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* Textarea */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Button */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Feedback List */
+#feedbackList {
+    margin-top: 30px;
+}
+
+/* Feedback cards */
+#feedbackList > div {
+    background: #f8faff;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border-left: 4px solid #6366f1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Links */
+a {
+    display: block;
+    margin-top: 22px;
+    text-align: center;
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        padding: 25px 20px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>All Feedback</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>All Student Feedback</h1>
+
+        <div id="feedbackList"></div>
+
+        <a href="index.html">
+            Submit New Feedback
+        </a>
+
+    </div>
+
+    <script>
+
+        async function loadFeedback() {
+
+            try {
+
+                const response = await fetch("http://localhost:5000/feedback");
+
+                const feedbacks = await response.json();
+
+                const feedbackList =
+                    document.getElementById("feedbackList");
+
+                feedbackList.innerHTML = "";
+
+                feedbacks.forEach((feedbackData) => {
+
+                    const div = document.createElement("div");
+
+                    div.innerHTML = `
+                        <h3>${feedbackData.name}</h3>
+                        <p>Rating: ${feedbackData.rating}/5</p>
+                        <p>${feedbackData.comment}</p>
+                        <hr>
+                    `;
+
+                    feedbackList.appendChild(div);
+
+                });
+
+            } catch (error) {
+
+                console.log("Error:", error);
+
+            }
+
+        }
+
+        loadFeedback();
+
+    </script>
+
+</body>
+
+</html>
